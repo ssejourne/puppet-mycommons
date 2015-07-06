@@ -1,0 +1,13 @@
+---
+# System tuning & hardening
+sysctl::base::purge: true
+sysctl::base::hiera_merge_values: true
+sysctl::base::values:
+### IMPROVE SYSTEM MEMORY MANAGEMENT ###
+# Do less swapping
+  vm.swappiness:
+    value: '10'
+  vm.dirty_ratio:
+    value: '80'
+  vm.dirty_background_ratio:
+    value: '5'
